@@ -1,14 +1,14 @@
 {
   "type": "all",
   "log_level": "DEBUG",
-  "log_file": "/home/user/prize_components/logs/",
-  "routes_file": "/home/user/prize_components/conf/routes.json",
+  "log_file": "",
+  "routes_file": "/conf/routes.json",
 
   "broker_config": {
-    "host": "10.1.38.26",
+    "host": "",
     "port": 5672,
-    "username": "admin",
-    "password": "admin"
+    "username": "",
+    "password": ""
   },
 
   "handler_config": {
