@@ -1,3 +1,3 @@
 [submodule "service_framework"]
 	path = service_framework
-	url = git@<url>:prize/common/service_framework.git
+	url = git@<url>:/service_framework.git
