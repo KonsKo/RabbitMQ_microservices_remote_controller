@@ -7,7 +7,7 @@ Wants=systemd-networkd.service
 Type=simple
 User=user
 Group=user
-ExecStart=/home/user/prize_components/remote_controller/venv/bin/python3.8 /home/user/prize_components/remote_controller --config="/home/user/prize_components/conf/remote_controller.json" --service="remote_controller"
+ExecStart=<path_to>/venv/bin/python3.8 <path_ti>/remote_controller --config="<path_to>/conf/remote_controller.json" --service="remote_controller"
 Restart=on-abnormal
 
 [Install]
