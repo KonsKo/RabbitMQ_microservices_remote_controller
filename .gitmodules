@@ -1,0 +1,3 @@
+[submodule "service_framework"]
+	path = service_framework
+	url = git@10.1.138.68:prize/common/service_framework.git

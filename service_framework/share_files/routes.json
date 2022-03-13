@@ -1,0 +1,114 @@
+[
+  {
+    "service": "remote_controller",
+    "routes": {
+      "consume": {
+        "queue_name": "remote_controller",
+        "exchange": "amq.direct",
+        "exchange_type": "direct",
+        "routing_key": "control_defender"
+      },
+      "publish": [
+        {
+          "exchange": "amq.topic",
+          "exchange_type": "topic",
+          "routing_key": "event.common"
+        },
+        {
+          "exchange": "amq.topic",
+          "exchange_type": "topic",
+          "routing_key": "event.notify"
+        },
+        {
+          "exchange": "amq.direct",
+          "exchange_type": "direct",
+          "routing_key": "settings_changed"
+        },
+        {
+          "exchange": "amq.direct",
+          "exchange_type": "direct",
+          "routing_key": "mon"
+        }
+
+      ]
+    }
+  },
+
+  {
+    "service": "event_writer",
+    "routes": {
+      "consume": {
+        "queue_name": "event_writer",
+        "exchange": "amq.topic",
+        "exchange_type": "topic",
+        "routing_key": "*.common"
+      }
+    }
+  },
+
+  {
+    "service": "settings_updater",
+    "routes": {
+      "consume": {
+        "queue_name": "settings_updater",
+        "exchange": "amq.direct",
+        "exchange_type": "direct",
+        "routing_key": "settings_changed"
+      },
+      "publish": [
+        {
+          "exchange": "amq.topic",
+          "exchange_type": "topic",
+          "routing_key": "event.common"
+        },
+        {
+          "exchange": "amq.direct",
+          "exchange_type": "direct",
+          "routing_key": "control_defender"
+        }
+      ]
+    }
+  },
+
+  {
+    "service": "signature_updater",
+    "routes": {
+      "publish": [
+        {
+          "exchange": "amq.direct",
+          "exchange_type": "direct",
+          "routing_key": "control_defender"
+        },
+        {
+          "exchange": "amq.topic",
+          "exchange_type": "topic",
+          "routing_key": "event.common"
+        }
+      ]
+    }
+  },
+
+  {
+    "service": "monitor",
+    "routes": {
+      "consume": {
+        "queue_name": "monitoring",
+        "exchange": "amq.direct",
+        "exchange_type": "direct",
+        "routing_key": "mon"
+      },
+      "publish": [
+        {
+          "exchange": "amq.direct",
+          "exchange_type": "direct",
+          "routing_key": "control_defender"
+        },
+        {
+          "exchange": "amq.topic",
+          "exchange_type": "topic",
+          "routing_key": "event.common"
+        }
+      ]
+    }
+  }
+]

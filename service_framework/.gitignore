@@ -1,0 +1,17 @@
+../venv
+temp/
+daemon/
+.vscode
+tmp/
+public/
+*.pyc
+.idea
+__pycache__
+.venv
+/logfile*
+logfile
+*.log
+*.log*
+*.crt
+*.key
+*.service

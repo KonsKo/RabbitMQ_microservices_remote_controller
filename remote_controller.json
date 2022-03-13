@@ -1,0 +1,20 @@
+{
+  "type": "all",
+  "log_level": "DEBUG",
+  "log_file": "/home/user/prize_components/logs/",
+  "routes_file": "/home/user/prize_components/conf/routes.json",
+
+  "broker_config": {
+    "host": "10.1.38.26",
+    "port": 5672,
+    "username": "admin",
+    "password": "admin"
+  },
+
+  "handler_config": {
+    "username": "windef",
+    "program": "pwsh",
+    "key_path": "/home/user/.ssh/id_rsa"
+  }
+}
+

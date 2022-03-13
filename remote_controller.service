@@ -1,0 +1,14 @@
+[Unit]
+Description=Prize: module settings updater
+After=network-online.target
+Wants=systemd-networkd.service
+
+[Service]
+Type=simple
+User=user
+Group=user
+ExecStart=/home/user/prize_components/remote_controller/venv/bin/python3.8 /home/user/prize_components/remote_controller --config="/home/user/prize_components/conf/remote_controller.json" --service="remote_controller"
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target
